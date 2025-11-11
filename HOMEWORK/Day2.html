@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="javascript" type="text/javascript">
+        let contact1 = {
+            name : "John Doe",
+            phone : 4433665544,
+            email : "johndoe@example.com",
+            getInfo : function() {
+                 return "Name :" + contact1.name + " , Phone : " + contact1.phone + " , E-mail : " + contact1.email ;
+            }
+        }
+         let contact2 = {
+            name : "Jane Doe",
+            phone : 4493665544,
+            email : "janedoe@example.com",
+            getInfo : function () {
+                 return "Name :" + contact2.name + " , Phone : " + contact2.phone + " , E-mail : " + contact2.email ;
+            }
+        }
+        function printContactInfo(contact) {
+            console.log(contact.getInfo())
+        }
+
+        printContactInfo (contact1);
+        printContactInfo (contact2);
+    </script>
+</body>
+</html>
