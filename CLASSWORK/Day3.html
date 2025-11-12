@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="feedback"></p>
+<p id="position"></p>
+<p id="array"></p>
+
+<script lang="javascript" type="text/javascript">
+  var feedback = "   I loved the FOOD and the service!   ";
+  var feedback = feedback.trim();
+  var feedback = feedback.toLowerCase();
+  var feedback = feedback.replace("food", "ambience");
+  var position = feedback.indexOf("service");
+  var wordsArray = feedback.split(" ");
+
+  document.getElementById("feedback").innerHTML = feedback;
+  document.getElementById("position").innerHTML = position;
+  document.getElementById("array").innerHTML = wordsArray;
+</script>
+
+</body>
+</html>
