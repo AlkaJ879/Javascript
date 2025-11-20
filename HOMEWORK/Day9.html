@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="comment">I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.</p>
+    <p id="badwords"></p>
+    <p id="numbercount"></p>
+    <p id="capitalisedwordcount"></p>
+    <p id="cleanedcomment"></p>
+
+    <script>
+         text = document.getElementById("comment").innerHTML;
+         document.getElementById("badwords").innerHTML = "The comment has banned words : " + /bad| ugly | stupid/ig.test(text) ;
+         var cleanedComment = text.replace(/bad|ugly|stupid/ig, "***")
+         document.getElementById("cleanedcomment").innerHTML = cleanedComment
+
+         var number = text.match(/\d+/g);
+         document.getElementById("numbercount").innerHTML = "Number Count : " + number.length;
+
+         var capital = text.match(/\b[A-Z]/g);
+         document.getElementById("capitalisedwordcount").innerHTML = "Capitalised word count : " + capital.length
+    </script>
+</body>
+</html>

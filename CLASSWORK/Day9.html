@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="comment">My son is 12 years old. Our flat number is 45 and contact is 9876543210</p>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+        text = document.getElementById("comment").innerHTML; 
+document.getElementById("demo").innerHTML = "The comment has numbers : " + /\d+/g.test(text);
+
+var updatedComment = text.replace(/\d+/g, "NUMBER");
+document.getElementById("demo2").innerHTML = updatedComment
+    </script>
+</body>
+</html>
