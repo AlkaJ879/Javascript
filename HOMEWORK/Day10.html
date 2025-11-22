@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        jsonText = `{
+        "feedback" : "Thank you!"
+        }`
+        var check = () => {
+            try {
+                Obj = JSON.parse(jsonText);
+
+                thank = /thank/ig.test(Obj.feedback)
+
+                if (thank) {
+                     console.log("Positive feedback received")
+                } else {
+                    console.log("Feedback noted")
+                }
+            }
+            catch (err) {
+                  console.log ("JSON is invalid")
+            }
+
+        }
+        check()
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   jsonText = `{ 
+  	"name":"Alka", 
+  	"email":"alka@gmail.com", 
+  	"message": "Hi"
+}`;
+
+
+var message = () => {
+    try {
+           obj = JSON.parse (jsonText);
+           console.log("Message received from " + obj.name)
+    }
+    catch(err) {
+        console.log("Invalid JSON format")
+    }
+}
+message()
+</script>
+</body>
+</html>
