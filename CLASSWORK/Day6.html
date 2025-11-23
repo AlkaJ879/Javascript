@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    var products = ["Apple", "Banana", "Mango"];
+    var prices = [50, 20, 70];
+
+    var mergedList = [];
+
+    for (let i = 0; i < products.length; i++) {
+        mergedList.push("Product: " + products[i] + " - Price: " + prices[i]);
+    }
+
+    console.log("All Products:");
+    for (let i = 0; i < mergedList.length; i++) {
+        console.log(mergedList[i]);
+    }
+
+    console.log("Products with price > 50:");
+    for (let i = 0; i < prices.length; i++) {
+        if (prices[i] > 50) {
+            console.log("Product: " + products[i] + " - Price: " + prices[i]);
+        }
+    }
+
+    
+    products.push("Watermelon");
+    prices.push(80);
+
+    mergedList = [];
+    for (let i = 0; i < products.length; i++) {
+        mergedList.push("Product: " + products[i] + " - Price: " + prices[i]);
+    }
+
+    console.log("Updated Product List:");
+    for (let i = 0; i < mergedList.length; i++) {
+        console.log(mergedList[i]);
+    }
+
+    </script>
+</body>
+</html>

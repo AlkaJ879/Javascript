@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var students = [
+            { name: "Alka", score: 75 },
+            { name: "Ashik", score: 55 },
+            { name: "Salini", score: 92 },
+            { name: "Rakhi", score: 30 },
+            { name: "Rijosh", score: 67 }
+        ];
+
+function getName(student) {
+    return student.name;
+}
+var allNames = students.map(getName);
+console.log("All Student Names:", allNames);
+
+
+function aboveSixty(student) {
+    return student.score > 60;
+}
+var goodStudents = students.filter(aboveSixty);
+console.log("Scored above 60:", goodStudents);
+
+
+function addScores(total, student) {
+    return total + student.score;
+}
+var totalScore = students.reduce(addScores, 0);
+console.log("Total Score:", totalScore);
+
+function isPassed(student) {
+    return student.score > 35;
+}
+var allPassed = students.every(isPassed);
+console.log("All Students Passed:", allPassed);
+
+function aboveNinety(student) {
+    return student.score > 90;
+}
+var someoneAbove90 = students.some(aboveNinety);
+console.log("Someone Scored Above 90:", someoneAbove90);
+
+
+function sortByScore(a, b) {
+    return b.score - a.score; 
+}
+students.sort(sortByScore);
+console.log("Sorted by Score:");
+
+for (var i = 0; i < students.length; i++) {
+    console.log(students[i].name + " - " + students[i].score);
+}
+
+    </script>
+</body>
+</html>
