@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="output"></p>
+
+    <script>
+        class Book {
+            constructor(title, author, price) {
+                this.title = title;
+                this.author = author;
+                this.price = price;
+            }
+
+            get Title() {
+                return this.title;
+            }
+
+            get Author() {
+                return this.author;
+            }
+
+            get Price() {
+                return this.price;
+            }
+
+            set Price(newPrice) {
+                if (typeof newPrice === "number" && newPrice > 0) {
+                    this.price = newPrice;
+                } else {
+                    console.log("Invalid price");
+                }
+            }
+
+            get Details() {
+                return `
+                    Title: ${this.Title} <br>
+                    Author: ${this.Author} <br>
+                    Price: ₹${this.Price}
+                `;
+            }
+        }
+
+        let book1 = new Book("Atomic Habits", "James Clear", 499);
+
+        book1.Price = -200;     
+        book1.Price = "hello";  
+        book1.Price = 650;    
+
+        document.getElementById("output").innerHTML = book1.Details;
+    </script>
+
+</body>
+</html>
+

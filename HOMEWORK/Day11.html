@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p id="result"></p>
+
+<script>
+    class User {
+        constructor(name, age, email) {
+            this.name = name;
+            this.age = age;
+            this.email = email; 
+        }
+
+        get Name() {
+            return this.name;
+        }
+
+        get Age() {
+            return this.age;
+        }
+
+        get Email() {
+            return this.email;
+        }
+
+        set Email(newEmail) {
+            if (typeof newEmail === "string" && newEmail.includes("@")) {
+                this.email = newEmail;
+            } else {
+                console.log("Invalid email format");
+            }
+        }
+
+        get Details() {
+            return `
+                Name: ${this.Name} <br>
+                Age: ${this.Age} <br>
+                Email: ${this.Email}
+            `;
+        }
+    }
+
+   
+    let user1 = new User("Alka", 22, "alka@example.com");
+
+    user1.Email = "invalidEmail";  
+    user1.Email = "alka.new@example.com"; 
+
+    document.getElementById("result").innerHTML = user1.Details;
+</script>
+
+</body>
+</html>
+
